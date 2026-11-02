@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="description" content="Fen Bilimleri, Sınıf Öğretmenliği, Özel Eğitim ve Okul Öncesi Öğretmenlerinden Oluşan STEM Grubumuz İçin Türkiye Yüzyılı Maarif Modeli Uyumlu 8 Proje Seçim Rehberi." />
+  <title>STEM Proje Seçim Rehberi — Türkiye Yüzyılı Maarif Modeli</title>
+
+  <!-- Modern Eğitim Platformu Tipografisi: Outfit (Güçlü Geometrik Başlık) & Inter (Net Ekran Okuması) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Üst Menü (Mobil ve Masaüstü Uyumlu) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand">
+        <span class="brand-icon">✦</span>
+        <div>
+          <strong class="brand-name">STEM Proje Seçim Rehberi</strong>
+          <span class="brand-tag">Fen Bilimleri • Sınıf • Özel Eğitim • Okul Öncesi</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="Sayfa Menüsü">
+        <a href="#canli-oylama">Canlı Grup Oylaması</a>
+        <a href="#brans-uyumu">Branşlarımızın Uyumu</a>
+        <a href="#projeler">8 Proje Önerisi</a>
+        <a href="#karsilastirma">Karşılaştırma Tablosu</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="fav-counter-btn" onclick="scrollToLiveBoard()" title="Canlı oylama tablosuna git">
+          <span>Seçimim: <strong id="voteCount">0</strong> / 8</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Ferah Giriş (Hero) Alanı -->
+  <section class="hero-section">
+    <div class="container hero-layout">
+      <div class="hero-text">
+        <span class="pill-label">Türkiye Yüzyılı Maarif Modeli • Disiplinlerarası STEM</span>
+        <h1>4 Farklı Branştan Tek Bir <em>Kapsayıcı Yaşam Projesine</em></h1>
+        <p class="hero-description">
+          Grubumuzdaki <strong>Fen Bilimleri</strong>, <strong>Sınıf Öğretmenliği</strong>, <strong>Özel Eğitim</strong> ve <strong>Okul Öncesi</strong> öğretmenlerimizin kendi alan kazanımlarıyla doğrudan katkı sunabileceği; kurulumu kolay, çok duyulu (ışıklı, sesli, ekranlı) ve sunum etkisi yüksek <strong>8 proje önerisi</strong>.
+        </p>
+
+        <!-- 3 Adımda Nasıl Kullanılır? -->
+        <div class="steps-row">
+          <div class="step-item">
+            <span class="step-num">1</span>
+            <div>
+              <strong>Projeleri İnceleyin</strong>
+              <span>Her kartta Fen Bilimleri, Özel Eğitim, Sınıf ve Okul Öncesi branşlarımızın kazanım karşılığını görün.</span>
+            </div>
+          </div>
+          <div class="step-item">
+            <span class="step-num">2</span>
+            <div>
+              <strong>Uygulama Detayına Bakın</strong>
+              <span>Projenin adım adım nasıl çalıştığını ve ekranda ne göstereceğini canlı test edin.</span>
+            </div>
+          </div>
+          <div class="step-item">
+            <span class="step-num">3</span>
+            <div>
+              <strong>Favorinizi Seçin</strong>
+              <span>Grubumuz için en uygun gördüğünüz projeleri işaretleyerek kolayca karşılaştırın.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sağ: Temiz Özet Kartı -->
+      <aside class="summary-card">
+        <h3>Neden Bu 8 Proje Ekibimiz İçin Çok Uygun?</h3>
+        <ul class="clean-check-list">
+          <li>
+            <strong>Çok Duyulu & Engelsiz Tasarım (Özel Eğitim):</strong>
+            <span>Tüm projelerde aynı anda <strong>Renkli Işık (RGB LED) + Sesli Uyarı (Buzzer) + Görsel Ekran (OLED)</strong> bulunduğu için özel gereksinimli öğrenciler için tam erişilebilirdir.</span>
+          </li>
+          <li>
+            <strong>4 Branşa Doğrudan Uyum:</strong>
+            <span>Fen Bilimleri deneyini, Sınıf Öğretmenliği günlük yaşam becerisini, Özel Eğitim kapsayıcı materyal tasarımını ve Okul Öncesi oyun/maket kurgusunu birleştirir.</span>
+          </li>
+          <li>
+            <strong>%85 Ortak Malzeme & Kolay Kurulum:</strong>
+            <span>8 projenin tamamı aynı ana setle çalışır; karmaşık mekanik parçalar içermez, kurulumu hızlı ve güvenilirdir.</span>
+          </li>
+        </ul>
+        <a href="#projeler" class="btn btn-primary btn-full">8 Projeyi İncelemeye Başla ↓</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Gruptaki 4 Öğretmen Branşının Projelerdeki Yeri -->
+  <section id="brans-uyumu" class="roles-section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-eyebrow">BRANŞLARIMIZIN ORTAKLIĞI</span>
+        <h2>4 Branşımız Projelerde Nasıl Bütünleşiyor?</h2>
+        <p>Türkiye Yüzyılı Maarif Modeli'nin disiplinlerarası ve kapsayıcı eğitim yaklaşımıyla her branşımız projelerin bir boyutunu tamamlar:</p>
+      </div>
+
+      <div class="branch-cards-grid">
+        <div class="branch-card branch-science">
+          <div class="branch-badge">Fen Bilimleri Öğretmeni</div>
+          <h3>Bilimsel Süreç, Sensör Deneyi ve Maarif Kazanımı (FBAB)</h3>
+          <p>Projenin 5–8. sınıf Fen Bilimleri ünitesiyle (`FB.5`–`FB.8`) bağlantısını, bilimsel gözlem, hipotez, kontrollü deney ve model oluşturma (`FBAB1–FBAB13`) süreçlerini kapsar.</p>
+        </div>
+
+        <div class="branch-card branch-special">
+          <div class="branch-badge">Özel Eğitim Öğretmeni</div>
+          <h3>Kapsayıcı Eğitim, Engelsiz Erişim ve Çok Duyulu Materyal</h3>
+          <p>Projenin <strong>Evrensel Tasarım İlkeleri</strong>'ne göre görme, işitme ve özel öğrenme gereksinimi olan öğrenciler için sesli ritimler, renk kodları ve dokunsal yüzeylerle erişilebilir olmasını sağlar.</p>
+        </div>
+
+        <div class="branch-card branch-primary">
+          <div class="branch-badge">Sınıf Öğretmeni</div>
+          <h3>Günlük Yaşam Becerisi, Sürdürülebilirlik ve Değerler</h3>
+          <p>Projenin ilkokul kademesindeki Hayat Bilgisi ve Fen konularıyla (trafik güvenliği, su tasarrufu, afet bilinci, sağlıklı yaşam) bağını ve toplumsal sorumluluk boyutunu içerir.</p>
+        </div>
+
+        <div class="branch-card branch-preschool">
+          <div class="branch-badge">Okul Öncesi Öğretmeni</div>
+          <h3>Somut Maket Tasarımı, Duyusal Keşif ve Oyunlaştırma</h3>
+          <p>Soyut kavramların 3 boyutlu somut maketlerle (Ay küresi, gezegenler, çiçek saksısı, yaya geçidi), hikayeleştirmeyle ve merak uyandıran oyunlarla erken çocukluk düzeyine indirilmesini sağlar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+      <!-- Ana Bölüm: 8 Proje Seçkisi -->
+  <main id="projeler" class="projects-section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-eyebrow">PROBLEM DURUMU — BAŞLIK ÖNERİLERİ (1 – 8)</span>
+        <h2>8 STEM Projesi: Başlık ve Problem Durumu İkilileri</h2>
+        <p>Her kartın en üstünde çalıştay/proje şablonuna doğrudan yazılabilecek <strong>Proje Başlığı</strong> ve <strong>Problem Durumu (Gerçek Yaşam Senaryosu)</strong> ikilisi, altında ise 4 branşımızın kazanım uyumu yer almaktadır.</p>
+      </div>
+
+      <!-- Sade Filtre Çubuğu (Mobilde Kaydırılabilir) -->
+      <div class="filter-bar">
+        <div class="filter-pills" role="tablist">
+          <button type="button" class="filter-pill active" data-filter="all">Tüm Projeler (8)</button>
+          <button type="button" class="filter-pill" data-filter="Astronomi ve Uzay">Uzay & Astronomi (2)</button>
+          <button type="button" class="filter-pill" data-filter="Çevre, Sağlık ve Enerji">Çevre, Su & Enerji (3)</button>
+          <button type="button" class="filter-pill" data-filter="Güvenlik, Afet ve Deney">Güvenlik, Afet & Deney (3)</button>
+          <button type="button" class="filter-pill" data-filter="favorites" id="favFilterBtn">★ Seçtiklerim (0)</button>
+        </div>
+
+        <div class="search-input-wrap">
+          <input type="text" id="searchInput" placeholder="Proje adı, branş veya malzeme ara..." aria-label="Proje Ara" />
+        </div>
+      </div>
+
+      <!-- Seçilen Favoriler Özeti (Seçim yapılınca görünür) -->
+      <div id="votingBanner" class="voting-banner" hidden>
+        <div class="voting-banner-info">
+          <strong>Sizin Seçtiğiniz Projeler:</strong>
+          <div id="selectedPillsList" class="selected-pills"></div>
+        </div>
+        <div class="voting-banner-btns">
+          <button type="button" class="btn btn-text" onclick="clearAllVotes()">Tüm Seçimimi Kaldır</button>
+        </div>
+      </div>
+
+      <!-- CANLI ORTAK GRUP OYLAMA PANOSU (ÜYELİKSİZ & ANLIK SENKRONİZE) -->
+      <div id="canli-oylama" class="live-board-card">
+        <div class="live-board-top">
+          <div>
+            <div class="live-status-row">
+              <span class="live-pulse-dot"></span>
+              <span class="live-status-text" id="liveSyncStatus">Canlı Grup Tablosu (Herkesin Seçimi Anlık Görünür)</span>
+            </div>
+            <h3>Öğretmen Grubumuzun Ortak Oylama Durumu</h3>
+            <p class="live-board-sub">Aşağıdan branşınızı/adınızı seçip projelerdeki <strong>"+ Seçime Ekle"</strong> butonuna bastığınızda seçiminiz tüm arkadaşlarımızın ekranına anında yansır. Tekrar basarak seçiminizi kaldırabilirsiniz.</p>
+          </div>
+
+          <!-- Öğretmen Kimlik / Branş Seçici -->
+          <div class="voter-identity-box">
+            <label for="teacherBranchSelect">Branşınız ve Adınız:</label>
+            <div class="voter-inputs-row">
+              <select id="teacherBranchSelect" onchange="saveVoterIdentity()">
+                <option value="Fen Bilimleri">Fen Bilimleri Öğretmeni</option>
+                <option value="Özel Eğitim">Özel Eğitim Öğretmeni</option>
+                <option value="Sınıf Öğretmenliği">Sınıf Öğretmeni</option>
+                <option value="Okul Öncesi">Okul Öncesi Öğretmeni</option>
+              </select>
+              <input type="text" id="teacherNameInput" placeholder="Adınız (Örn: Öznur)" oninput="saveVoterIdentity()" maxlength="24" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Canlı Oy Dağılımı Özeti -->
+        <div id="liveVotesContainer" class="live-votes-grid">
+          <!-- app.js tarafından canlı doldurulur -->
+        </div>
+      </div>
+
+      <!-- 8 Proje Kartı Izgarası -->
+      <div id="projectsGrid" class="projects-grid"></div>
+    </div>
+  </main>
+
+  <!-- Karşılaştırma Tablosu -->
+  <section id="karsilastirma" class="comparison-section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-eyebrow">ÖZET KARŞILAŞTIRMA</span>
+        <h2>Hangi Projeyi Seçmeliyiz? (Karar Tablosu)</h2>
+        <p>8 projenin Fen Bilimleri, Özel Eğitim, Sınıf Öğretmenliği ve Okul Öncesi uyumu ile sunum etkisi tek tabloda (Telefonda yana kaydırarak inceleyebilirsiniz):</p>
+      </div>
+
+      <div class="table-container">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Proje Adı</th>
+              <th>Fen Bilimleri Odağı</th>
+              <th>Özel Eğitim (Kapsayıcılık) Odağı</th>
+              <th>Sınıf Öğretmenliği & Okul Öncesi</th>
+              <th>Kurulum</th>
+              <th>Sunum Etkisi</th>
+              <th>Seçim</th>
+            </tr>
+          </thead>
+          <tbody id="comparisonTableBody">
+            <!-- app.js tarafından doldurulur -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ortak Malzeme Listesi -->
+  <section id="ortak-malzeme" class="materials-section">
+    <div class="container">
+      <div class="materials-box">
+        <div class="materials-intro">
+          <span class="section-eyebrow">MALİYET VE KOLAYLIK</span>
+          <h2>Tek Bir Ana Set ile Tüm Projeler Çalışır</h2>
+          <p>
+            Hangi projeyi seçersek seçelim aşağıdaki <strong>4 temel parça</strong> ortaktır. Sadece seçtiğimiz projenin algılayıcı sensörünü (örneğin toprak nem sensörü veya ışık sensörü) takarak düzeneği kolayca kurabiliriz.
+          </p>
+        </div>
+
+        <div class="materials-grid">
+          <div class="material-item">
+            <strong>1. Arduino Uno Kartı</strong>
+            <span>Projenin ana kontrol kartı. Sensörlerden gelen bilgiyi okuyup ekranı, sesleri ve ışıkları yönetir.</span>
+          </div>
+          <div class="material-item">
+            <strong>2. Mini Bilgi Ekranı (0.96" OLED)</strong>
+            <span>Ölçülen değerleri, geri sayımı ve uyarı mesajlarını net bir şekilde ekranda gösterir.</span>
+          </div>
+          <div class="material-item">
+            <strong>3. Breadboard ve Kablolar</strong>
+            <span>Lehim yapmaya gerek kalmadan kabloları tak-çıkar şeklinde güvenle birleştirmeyi sağlar.</span>
+          </div>
+          <div class="material-item">
+            <strong>4. Renkli Işık (RGB LED) ve Ses (Buzzer)</strong>
+            <span>Yeşil, sarı, kırmızı ışık ve farklı frekanstaki sesli uyarılarla projeyi çok duyulu (engelsiz) hale getirir.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proje Uygulama Detayı Penceresi -->
+  <div id="projectModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-window" id="modalContent"></div>
+  </div>
+
+  <!-- Alt Bilgi -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        <strong>STEM Öğretmenleri Proje Seçim Rehberi</strong>
+        <p>Fen Bilimleri, Sınıf Öğretmenliği, Özel Eğitim ve Okul Öncesi Öğretmenliği Disiplinlerarası Çalışma Dosyası</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
