@@ -1,10 +1,10 @@
 /*
- * STEM Öğretmenleri Proje Seçim Rehberi — 4 Branşa Özel Kapsayıcı ve Disiplinlerarası Veri Yapısı
+ * STEM Öğretmenleri Proje Seçim Rehberi — 4 Branşa Özel Disiplinlerarası Veri Yapısı
  * Branşlar:
- *   1. Fen Bilimleri Öğretmeni (Türkiye Yüzyılı Maarif Modeli Fen Bilimleri & FBAB)
- *   2. Özel Eğitim Öğretmeni (Kapsayıcı Eğitim, Engelsiz Erişim & Çok Duyulu Materyal Tasarımı)
- *   3. Sınıf Öğretmeni (İlkokul Hayat Bilgisi, Fen & Günlük Yaşam Becerileri)
- *   4. Okul Öncesi Öğretmeni (Erken Çocukluk Duyusal Keşif, Somut Maket & Oyunlaştırma)
+ *   1. Ortaokul Fen Bilimleri Öğretmeni (Türkiye Yüzyılı Maarif Modeli Fen Bilimleri FB.5–FB.8 & FBAB)
+ *   2. Lise Kimya Öğretmeni (Maarif Modeli Kimya KİM.9–KİM.12, Çözeltiler, Gazlar, Yarı İletkenler & Sürdürülebilirlik)
+ *   3. Lise İngilizce Öğretmeni (CLIL - Content and Language Integrated Learning, English for STEM & Küresel Sunum)
+ *   4. Lise Almanca Öğretmeni (MINT-Fächer, Umwelt & Technik Terminolojisi, 3 Dilli TR/EN/DE Arayüz & Poster)
  */
 
 const PROJECTS = [
@@ -12,55 +12,49 @@ const PROJECTS = [
     id: "proje-1",
     num: "Proje 01",
     shortCode: "01",
-    title: "Etkileşimli Ay Evreleri ve Hicri Takvim Göstergesi",
+    title: "Etkileşimli Ay Evreleri ve Çok Dilli Hicri Takvim Göstergesi",
     category: "Astronomi ve Uzay",
     difficulty: "Kolay Kurulum",
     costLevel: "Düşük Maliyet",
-    juryImpact: "Dokunsal Ay küresi, kademeli ışığı ve takvim bağlantısıyla çok anlaşılır",
-    problem: "Öğrencilerin Ay'ın evrelerini kitaptan soyut olarak ezberlemek yerine; butona basarak Hicri takvim günleriyle (1. gün Yeni Ay, 7. gün İlk Dördün, 14. gün Dolunay) hem ekrandan hem de ışıklı Ay küresinden adım adım gözlemleyebileceği masaüstü model.",
+    juryImpact: "Işıklı Ay küresi, yüzey kimyası (albedo) ve 3 dilli (TR/EN/DE) ekranıyla çok anlaşılır",
+    problem: "Öğrencilerin Ay'ın evrelerini kitaptan soyut olarak ezberlemek yerine; butona basarak Hicri takvim günleriyle (1. gün Yeni Ay, 7. gün İlk Dördün, 14. gün Dolunay) hem çok dilli (TR/EN/DE) bilgi ekranından hem de kademeli aydınlanan Ay küresinden adım adım gözlemleyebileceği etkileşimli astronomi modeli.",
     scienceFocus: "5. Sınıf Gökyüzündeki Komşularımız ve Biz (FB.5.1.2 & FB.5.1.3): Ay'ın dönme ve dolanma hareketleriyle ana ve ara evrelerin oluşumunu bilimsel model üzerinde gözlemleme (FBAB1 Gözlem, FBAB9 Model Oluşturma).",
-    specialEdFocus: "Kabartmalı (dokunsal) Ay evresi diskleri ve kademeli artan ışık şiddeti (%0'dan %100'e) sayesinde görme azlığı veya özel öğrenme gereksinimi olan öğrenciler için soyut astronomi kavramını somutlaştırır.",
-    primaryFocus: "İlkokul Fen & Hayat Bilgisi: Dünya, Güneş ve Ay'ın hareketleri, takvim çeşitleri (Miladi ve Hicri takvim döngüsü) ve zaman ölçümü kavramlarını günlük yaşamla ilişkilendirir.",
-    preschoolFocus: "Okul Öncesi: Gece-gündüz farkındalığı, gökyüzü gözlemi; karanlık kutu veya şeffaf küre içindeki ışığın değişimiyle 'Hilal' ve 'Dolunay' şekillerini hikaye ve oyunla keşfetme.",
+    chemistryFocus: "Lise Kimya (Madde ve Işık Etkileşimi / Anorganik Yapılar): Ay yüzeyini kaplayan regolit tabakasının (silikat mineralleri, demir ve titanyum oksitler) güneş ışığını yansıtma oranı (albedo) ve LED yarı iletken kristallerinde foton yayılımı.",
+    englishFocus: "Lise İngilizce (English for Astronomy & CLIL): Ay evrelerinin uluslararası bilim literatüründeki karşılıklarının (New Moon, Waxing Crescent, First Quarter, Full Moon) OLED ekranda ve sunum materyallerinde çift dilli modellenmesi.",
+    germanFocus: "Lise Almanca (MINT & Astronomie): Almanca astronomi ve zaman kavramlarının (Mondphasen: Neumond, Sichelmond, Halbmond, Vollmond) maket üzerindeki 3 dilli kavram kartlarına ve ekran arayüzüne entegrasyonu.",
     hardware: ["Arduino Uno", "0.96\" OLED Ekran", "1x Büyük Buton", "1x Beyaz LED (Ay Küresi İçinde)"],
     howItWorks: [
       "Masadaki büyük butona her basıldığında sistem sıradaki Ay evresine geçer.",
-      "Mini bilgi ekranında o evrenin adı, Hicri aydaki günü (örneğin 14. Gün = Dolunay) ve aydınlanma oranı yazar.",
-      "Aynı anda şeffaf Ay küresi içindeki beyaz ışık, evrenin aydınlanma oranına göre kademeli olarak parlar."
-    ],
-    teamPlan: [
-      "Fen Bilimleri Öğretmeni: Ay'ın evrelerinin oluşum mekanizmasını ve Maarif Modeli FB.5.1 kazanımını anlatır.",
-      "Özel Eğitim Öğretmeni: Dokunsal (kabartmalı) evre kartlarını ve özel gereksinimli öğrenciler için basitleştirilmiş buton kullanımını sunar.",
-      "Sınıf Öğretmeni: Hicri ve Miladi takvim bağlantısını, zaman döngüsünü ve ilkokul düzeyindeki kazanımları açıklar.",
-      "Okul Öncesi Öğretmeni: 3 boyutlu Ay küresi maketini ve erken çocuklukta 'Gökyüzü ve Gece' hikayeleştirmesini sunar."
+      "Mini bilgi ekranında o evrenin Türkçe, İngilizce ve Almanca adı, Hicri aydaki günü (örneğin 14. Gün = Dolunay) ve aydınlanma oranı yazar.",
+      "Aynı anda şeffaf Ay küresi içindeki beyaz ışık, evrenin aydınlanma oranına göre PWM tekniğiyle kademeli olarak parlar."
     ],
     oledStates: [
       {
         btnLabel: "1. Gün: Yeni Ay",
-        yellowBar: "HİCRİ TAKVİM: 1. GÜN",
-        line1: "Evre: YENİ AY",
-        line2: "Aydınlanma Oranı: %0",
+        yellowBar: "HİCRİ: 1. GÜN // %0 IŞIK",
+        line1: "TR: Yeni Ay | EN: New Moon",
+        line2: "DE: Neumond (Aydınlanma: %0)",
         meterPercent: 4
       },
       {
         btnLabel: "4. Gün: Hilal",
-        yellowBar: "HİCRİ TAKVİM: 4. GÜN",
-        line1: "Evre: İLK HİLAL",
-        line2: "Aydınlanma Oranı: %25",
+        yellowBar: "HİCRİ: 4. GÜN // %25 IŞIK",
+        line1: "TR: Hilal | EN: Crescent",
+        line2: "DE: Sichelmond (Aydınlanma: %25)",
         meterPercent: 25
       },
       {
         btnLabel: "7. Gün: İlk Dördün",
-        yellowBar: "HİCRİ TAKVİM: 7. GÜN",
-        line1: "Evre: İLK DÖRDÜN (Yarım)",
-        line2: "Aydınlanma Oranı: %50",
+        yellowBar: "HİCRİ: 7. GÜN // %50 IŞIK",
+        line1: "TR: İlk Dördün | EN: First Quarter",
+        line2: "DE: Erstes Viertel (%50)",
         meterPercent: 50
       },
       {
         btnLabel: "14. Gün: Dolunay",
-        yellowBar: "HİCRİ TAKVİM: 14. GÜN",
-        line1: "Evre: DOLUNAY (Tam Parlak)",
-        line2: "Aydınlanma Oranı: %100",
+        yellowBar: "HİCRİ: 14. GÜN // %100 IŞIK",
+        line1: "TR: Dolunay | EN: Full Moon",
+        line2: "DE: Vollmond (Tam Parlak %100)",
         meterPercent: 100
       }
     ]
@@ -69,55 +63,49 @@ const PROJECTS = [
     id: "proje-2",
     num: "Proje 02",
     shortCode: "02",
-    title: "Etkileşimli Gezegen Sınıflandırma ve Güneş Sistemi Modeli",
+    title: "Gezegen Sınıflandırma, Atmosfer Kimyası ve Güneş Sistemi Modeli",
     category: "Astronomi ve Uzay",
     difficulty: "Kolay - Orta",
     costLevel: "Düşük Maliyet",
-    juryImpact: "Renkli gezegen maketi, ses tonları ve ışıklı geri bildirimiyle çok ilgi çekici",
-    problem: "Güneş sistemindeki gezegenlerin iç (karasal) ve dış (gazsal) olarak ayrımını, uydu sayılarını ve Asteroit Kuşağı sınırını hem dokunsal maket hem de sesli ve renkli bilgi ekranıyla öğreten kapsayıcı materyal.",
+    juryImpact: "Gezegenlerin atmosfer kimyasını, sınıflandırmasını ve çok dilli küresel terimleri birleştirir",
+    problem: "Güneş sistemindeki gezegenlerin iç (karasal/kayaç) ve dış (gaz devi) olarak ayrımını, gezegen atmosferlerinin kimyasal bileşimini ve Asteroit Kuşağı sınırını hem ışıklı/sesli maket hem de çok dilli bilgi ekranıyla öğreten disiplinlerarası materyal.",
     scienceFocus: "6. Sınıf Güneş Sistemi ve Tutulmalar (FB.6.1.1 & FB.6.1.2): Gezegenleri yapısal niteliklerine (Karasal/Gazsal), halka ve uydu durumlarına göre sınıflandırma ve modelleme (FBAB2 Sınıflandırma).",
-    specialEdFocus: "Çok duyulu geri bildirim: Gezegenler değiştiğinde hem farklı frekansta ses (Buzzer) çıkarır hem de renk değiştirir (Karasal = Yeşil ışık, Gazsal = Mavi ışık). Görme ve işitme farklılığı olan öğrenciler için eşzamanlı uyaran sunar.",
-    primaryFocus: "İlkokul Fen & Matematiksel Sıralama: Gezegenlerin Güneş'e yakınlık sırasını (1'den 8'e sıra sayıları), büyüklük-küçüklük karşılaştırmasını ve Dünya'mızın sistemdeki yerini somutlaştırır.",
-    preschoolFocus: "Okul Öncesi: Farklı büyüklük ve dokudaki gezegen toplarına dokunarak 'Büyük-Küçük', 'Yakın-Uzak' ve 'Halkalı-Halkasız' kavramlarını renk eşleştirme oyunuyla öğrenme.",
+    chemistryFocus: "Lise Kimya (Elementler, Bileşikler ve Gazlar): Karasal gezegenlerin silikat ve ağır metal (Fe, Ni) çekirdek yapısı ile Gaz Devlerinin (Jüpiter, Satürn) Hidrojen (H₂), Helyum (He), Metan (CH₄) ve Amonyak (NH₃) gazlarından oluşan atmosfer kimyasının karşılaştırılması.",
+    englishFocus: "Lise İngilizce (CLIL & Space Science): 'Terrestrial Planets vs. Gas Giants' ve atmosferik bileşenlerin İngilizce bilimsel terminolojiyle OLED ekranda ve karşılaştırmalı proje posterinde sunulması.",
+    germanFocus: "Lise Almanca (MINT - Sonnensystem): Gezegen sınıflarının (Gesteinsplaneten / Gasriesen) ve temel element/gaz isimlerinin (Wasserstoff, Helium, Eisen) Almanca teknik bilgi kartlarıyla maket üzerinde eşleştirilmesi.",
     hardware: ["Arduino Uno", "0.96\" OLED Ekran", "RGB LED (Renkli Işık)", "Buzzer (Ses)", "2x Buton (İleri/Geri)"],
     howItWorks: [
       "İleri ve Geri butonlarıyla Güneş'ten başlayarak gezegenler arasında sırayla gezinilir.",
-      "Seçilen gezegen İç (Karasal) gezegen ise Yeşil ışık, Dış (Gazsal) gezegen ise Mavi ışık yanar ve farklı bir nota sesi çalar.",
+      "Seçilen gezegen İç (Karasal) gezegen ise Yeşil ışık yanar ve ekranda kayaç/metal yapısı yazar; Dış (Gazsal) gezegen ise Mavi ışık yanar ve hidrojen/helyum gaz atmosferi gösterilir.",
       "Mars ile Jüpiter arasındaki Asteroit Kuşağı'na gelindiğinde Sarı ışık ve özel uyarı sesiyle sınır bölgesi vurgulanır."
-    ],
-    teamPlan: [
-      "Fen Bilimleri Öğretmeni: Karasal ve gazsal gezegenlerin bilimsel özelliklerini ve Asteroit Kuşağı'nı açıklar.",
-      "Özel Eğitim Öğretmeni: Ses tonları, renk kodları ve farklı dokudaki gezegen kürelerinin özel eğitimde erişilebilirlik katkısını anlatır.",
-      "Sınıf Öğretmeni: Gezegenlerin Güneş'e yakınlık sıralamasını ve ilkokul düzeyindeki karşılaştırma etkinliklerini sunar.",
-      "Okul Öncesi Öğretmeni: Gezegen maketinin tasarımını ve erken çocukluk için uzay keşif oyununu tanıtır."
     ],
     oledStates: [
       {
         btnLabel: "3. Dünya (Karasal)",
-        yellowBar: "GEZEGEN 03 // DÜNYA",
-        line1: "Sınıf: Karasal (İç) Gezegen",
-        line2: "Uydu: 1 | Halka: Yok (Yeşil LED)",
+        yellowBar: "03 // DÜNYA (EARTH / ERDE)",
+        line1: "Sınıf: Karasal (Terrestrial)",
+        line2: "Kimya: N2, O2 Atmosfer | Fe-Si",
         meterPercent: 35
       },
       {
         btnLabel: "★ Asteroit Kuşağı",
-        yellowBar: "SINIR // ASTEROİT KUŞAĞI",
-        line1: "Mars ile Jüpiter Arası Sınır",
-        line2: "İç ve Dış Gezegenleri Ayırır",
+        yellowBar: "SINIR // ASTEROID BELT",
+        line1: "DE: Asteroidengürtel (Sınır)",
+        line2: "Karasal ve Gaz Gezegenleri Ayırır",
         meterPercent: 50
       },
       {
-        btnLabel: "5. Jüpiter (Gazsal)",
-        yellowBar: "GEZEGEN 05 // JÜPİTER",
-        line1: "Sınıf: Gazsal (Dış) - En Büyük",
-        line2: "Uydu: 95 | Halka: Var (Mavi LED)",
+        btnLabel: "5. Jüpiter (Gaz Devi)",
+        yellowBar: "05 // JÜPİTER (GAS GIANT)",
+        line1: "DE: Gasriese | Uydu: 95",
+        line2: "Kimya: %90 H2 + %10 He Gazı",
         meterPercent: 85
       },
       {
         btnLabel: "6. Satürn (Halkalı)",
-        yellowBar: "GEZEGEN 06 // SATÜRN",
-        line1: "Sınıf: Gazsal (Dış) Gezegen",
-        line2: "Uydu: 146 | Belirgin Halkalı",
+        yellowBar: "06 // SATÜRN (RINGED PLANET)",
+        line1: "Sınıf: Gaz Devi | Uydu: 146",
+        line2: "Halka: Buz (H2O) ve Silikat Tozu",
         meterPercent: 95
       }
     ]
@@ -130,51 +118,45 @@ const PROJECTS = [
     category: "Güvenlik, Afet ve Deney",
     difficulty: "Çok Kolay & Güvenilir",
     costLevel: "Düşük Maliyet",
-    juryImpact: "Görme ve işitme engelli bireyleri de kapsayan gerçek bir okul önü projesi",
-    problem: "Okul giriş-çıkışlarında tüm öğrencilerin (özel gereksinimli bireyler ve küçük çocuklar dahil) karşıdan karşıya güvenle geçmesini sağlayan; ultrasonik mesafe sensörüyle yaya geçidine yaklaşan öğrenciyi otomatik algılayarak ışıklandırmayı ve sesli/görsel geri sayımı başlatan engelsiz akıllı geçit.",
+    juryImpact: "Mesafe sensörüyle otomatik çalışan, karbon emisyonunu azaltan ve 3 dilli uyarı veren akıllı geçit",
+    problem: "Okul giriş-çıkışlarında öğrencilerin karşıdan karşıya güvenle geçmesini sağlayan; ultrasonik mesafe sensörüyle yaya geçidine yaklaşan öğrenciyi otomatik algılayarak ışıklandırmayı ve çok dilli (TR/EN/DE) geri sayımı başlatan, yaya yokken ise araçları gereksiz durdurmayarak egzoz emisyonunu azaltan akıllı geçit.",
     scienceFocus: "6. Sınıf Kuvvetin Etkisinde Hareket (FB.6.2.3): Sabit süratli hareket, araçların güvenli duruş/fren mesafesi ve ultrasonik sensörlerin (HC-SR04) ses dalgalarıyla yaklaşan yayayı otomatik algılama ilkeleri.",
-    specialEdFocus: "Tam Kapsayıcı (Engelsiz ve Temassız) Tasarım: Buton aramaya gerek kalmadan mesafe sensörü yaklaşan öğrenciyi otomatik algılar; görme engelli öğrenciler için geçiş süresince ritmik 'bip' sesi verir (son 3 saniyede hızlanır), işitme engelli öğrenciler için ise parlak OLED ekranda geri sayım ve renkli ışık sunar.",
-    primaryFocus: "İlkokul Hayat Bilgisi & Trafik Güvenliği: Okul geliş-gidişlerinde güvenli geçiş kuralları, trafik işaret ve ışıklarının anlamı, 10'dan geriye doğru güvenli geçiş süresini takip etme.",
-    preschoolFocus: "Okul Öncesi: Yaya geçidi maketi üzerinde oyuncak figürler sensörün önüne yaklaştırıldığında ışıkların otomatik değişmesini gözlemleme; 'Kırmızıda Dur, Yeşilde Geç' ve 'Önce Yaya' kurallarını oyunla deneyimleme.",
-    hardware: ["Arduino Uno", "0.96\" OLED Ekran", "HC-SR04 Ultrasonik Mesafe Sensörü (İsteğe Bağlı Ek Buton)", "Kırmızı-Sarı-Yeşil LED", "Buzzer (Engelsiz Ses)"],
+    chemistryFocus: "Lise Kimya (Yanma Tepkimeleri, Hava Kirliliği ve Sürdürülebilirlik): Sabit süreli klasik ışıkta boş yolda bekleyen araçların rölanti yanma tepkimeleriyle saldığı CO₂, CO ve NOₓ egzoz gazlarının; yalnızca sensör yaya algıladığında devreye giren akıllı geçit sayesinde azaltılması.",
+    englishFocus: "Lise İngilizce (Smart City & Public Safety): Uluslararası akıllı şehir standartlarına uygun olarak OLED ekranda ve geçit tabelasında İngilizce güvenlik uyarılarının ('PEDESTRIAN DETECTED – STOP / SAFE CROSSING') gösterilmesi.",
+    germanFocus: "Lise Almanca (Verkehrssicherheit & Umwelt): Almanca trafik güvenliği ve çevre dostu ulaşım kavramlarının ('Fußgängerüberweg / Bitte Warten – Grün: Gehen') üç dilli kamu spotu ve maket yönlendirmesi olarak uygulanması.",
+    hardware: ["Arduino Uno", "0.96\" OLED Ekran", "HC-SR04 Ultrasonik Mesafe Sensörü (İsteğe Bağlı Ek Buton)", "Kırmızı-Sarı-Yeşil LED", "Buzzer (Sesli Uyarı)"],
     howItWorks: [
       "Yaya geçidinin kenarındaki mesafe sensörü (HC-SR04), geçide yaklaşan bir öğrenciyi hiçbir butona basmaya gerek kalmadan otomatik algılar (isteğe bağlı olarak yaya butonu da eklenebilir).",
-      "Sensör birini algıladığı anda otomatik ışıklandırma devreye girer: araçlara önce Sarı, ardından Kırmızı ışık yanar; ekranda 'ÖNCE YAYA - GEÇİNİZ' mesajıyla 10 saniyelik geri sayım başlar.",
-      "Geçiş boyunca görme engelliler için sesli uyarı çalar; son 3 saniyede ses ritmi hızlanarak sürenin bittiğini bildirir."
-    ],
-    teamPlan: [
-      "Fen Bilimleri Öğretmeni: Araçların sürati, fren mesafesi ve ultrasonik mesafe sensörünün ses dalgalarıyla otomatik algılama prensibini anlatır.",
-      "Özel Eğitim Öğretmeni: Temassız otomatik algılamanın ve ritmik sesli/görsel uyarı sisteminin görme, işitme veya fiziksel engelli bireyler için önemini açıklar.",
-      "Sınıf Öğretmeni: İlkokul Hayat Bilgisi trafik güvenliği kazanımlarını ve güvenli geçiş süresi bilincini sunar.",
-      "Okul Öncesi Öğretmeni: Okul önü yaya geçidi maketini ve erken çocukluk trafik eğitimi dramasını tanıtır."
+      "Sensör birini algıladığı anda otomatik ışıklandırma devreye girer: araçlara önce Sarı, ardından Kırmızı ışık yanar; ekranda 3 dilde güvenli geçiş mesajıyla 10 saniyelik geri sayım başlar.",
+      "Yaya geçidinde kimse yokken araç trafiği kesilmez; böylece dur-kalk kaynaklı yakıt tüketimi ve karbon salımı önlenir."
     ],
     oledStates: [
       {
         btnLabel: "Normal (Sensör İzliyor)",
-        yellowBar: "ARAÇ TRAFİĞİ AÇIK",
-        line1: "Mesafe Sensörü: Aktif",
-        line2: "Yaya Yaklaşınca Otomatik Açılır",
+        yellowBar: "SENSÖR AKTİF // TRAFİK AÇIK",
+        line1: "Yaya Yok -> Egzoz Tasarrufu",
+        line2: "Yaklaşınca Otomatik Açılır",
         meterPercent: 10
       },
       {
         btnLabel: "Sensör Yayayı Algıladı (Sarı)",
-        yellowBar: "SENSÖR YAYAYI ALGILADI!",
+        yellowBar: "YAYA ALGILANDI! (PEDESTRIAN)",
         line1: "Otomatik Işıklandırma Başladı",
         line2: "Araçlar Yavaşlıyor (Sarı Işık)...",
         meterPercent: 40
       },
       {
         btnLabel: "Güvenli Geçiş (10 sn Sayaç)",
-        yellowBar: "ARAÇ: KIRMIZI // ÖNCE YAYA",
+        yellowBar: "GEÇİNİZ // CROSS // GEHEN",
         line1: "GÜVENLİ GEÇİŞ: 08 Saniye",
-        line2: "Engelsiz Ses: Normal Ritim",
+        line2: "Araç: KIRMIZI | Yaya: YEŞİL",
         meterPercent: 80
       },
       {
-        btnLabel: "Son 3 Saniye (Hızlı Ses)",
-        yellowBar: "SÜRE BİTİYOR // DİKKAT",
+        btnLabel: "Son 3 Saniye (Hızlı Uyarı)",
+        yellowBar: "SÜRE BİTİYOR // HURRY // EILEN",
         line1: "KALAN SÜRE: 02 Saniye!",
-        line2: "Engelsiz Ses: Hızlı Ritim",
+        line2: "Sesli Uyarı: Hızlı Ritim",
         meterPercent: 20
       }
     ]
@@ -183,49 +165,50 @@ const PROJECTS = [
     id: "proje-4",
     num: "Proje 04",
     shortCode: "04",
-    title: "Akıllı Sınıf Hava Kalitesi ve Duyusal Konfor İstasyonu",
+    title: "Küresel Isınma ve Balıkesir İklim Verileriyle Uyumlu Akıllı Sınıf Hava Kalitesi, Gaz Analizi ve Enerji Koruma İstasyonu",
     category: "Çevre, Sağlık ve Enerji",
     difficulty: "Orta",
     costLevel: "Orta Maliyet",
-    juryImpact: "Anaokulundan özel eğitim sınıfına kadar her derslikte doğrudan kullanılabilir",
-    problem: "Kış aylarında kapalı kalan sınıflarda karbondioksit (CO2) artışına, aşırı sıcaklığa ve neme bağlı dikkat dağınıklığı ve huzursuzluğu önlemek için 'Sınıfı Havalandırın' uyarısı veren akıllı sınıf sağlığı istasyonu.",
-    scienceFocus: "7. ve 8. Sınıf Sürdürülebilir Yaşam & Solunum (FB.8.7.3 & FB.7.7): Canlıların solunumu sonucu kapalı ortamda CO2 birikimi, hava kalitesi ve termal konfor verilerinin analizi (FBAB12 Kanıt Kullanma).",
-    specialEdFocus: "Özel Eğitim Sınıflarında Duyusal Konfor: Otizm veya duyusal hassasiyeti olan ya da rahatsızlığını sözel olarak ifade etmekte güçlük çeken öğrenciler için sınıfın havasını ve sıcaklığını otomatik takip ederek öğretmeni uyarır.",
-    primaryFocus: "İlkokul Hayat Bilgisi & Sağlıklı Yaşam: Sınıfımızın temizliği, temiz havanın beynimiz ve dikkatimiz için önemi, salgın hastalıklardan korunmak için düzenli havalandırma alışkanlığı.",
-    preschoolFocus: "Okul Öncesi: 'Temiz Hava = Yeşil Işık (Mutlu Yüz), Kirli Hava = Kırmızı Işık (Pencereyi Aç)' görselleştirmesiyle küçük çocuklara sağlıklı sınıf ortamı farkındalığı kazandırma.",
-    hardware: ["Arduino Uno", "MQ-135 Hava Kalitesi Sensörü", "DHT11 Sıcaklık/Nem Sensörü", "0.96\" OLED Ekran", "RGB LED & Buzzer"],
+    juryImpact: "Sınıf içi CO₂/Termal Konfor ölçümünü Balıkesir resmi iklim ve karbon ayak izi verileriyle birleştirir",
+    problem: "Balıkesir'deki ortaokul ve lise dersliklerinde kışın kapalı sınıflarda öğrenci solunumuyla hızla artan CO₂ derişimi (%50'ye varan odaklanma kaybı ve uyuklama yaratırken), pencerelerin ders boyu üstten yarım aralık (vasistas) bırakılması sınıf ısısını düşürerek okulun yakıt tüketimini ve Balıkesir'in kışlık karbon emisyonunu artırmaktadır. Bahar/yaz aylarında ise küresel ısınma kaynaklı Balıkesir sıcak dalgaları sınıf içi nem ve CO₂ ile birleşerek termal stres oluşturmaktadır. Okullarda hem temiz havayı hem de ısı enerjisi tasarrufunu aynı anda yönetecek veri tabanlı bir erken uyarı sistemi bulunmamaktadır.",
+    scienceFocus: "7. ve 8. Sınıf Sürdürülebilir Yaşam, Solunum & Küresel İklim Değişikliği (FB.8.7.3 & FB.7.7): Solunum sonucu kapalı ortamda CO₂ birikimi, küresel ısınma (MGM Balıkesir sıcaklık anomalileri) ve 'Sürekli Yarım Açık Pencere vs. 3 Dk Şok Havalandırma' kontrollü deneyiyle ısı kaybının analizi (FBAB12 Kanıt Kullanma).",
+    chemistryFocus: "Lise Kimya (Gazlar, Difüzyon, Sensör Kimyası ve Karbon Ayak İzi - KİM.10/11): Kapalı hacimde CO₂ ve uçucu gazların (VOC) difüzyonu, ppm derişim hesabı, MQ-135 sensöründeki SnO₂ yarı iletken yüzey kimyası ve Balıkesir İl Çevre Durum Raporu'ndaki kışlık ısınma kaynaklı fosil yakıt emisyonlarının azaltılması.",
+    englishFocus: "Lise İngilizce (CLIL, SECAP & Climate Action): Balıkesir'in de dahil olduğu Avrupa Birliği SECAP (Sustainable Energy and Climate Action Plan) ve SDG 13 (İklim Eylemi) kapsamında OLED ekranda 'Air Quality Index (AQI), Shock Ventilation & Thermal Stress' uyarılarının İngilizce modellenmesi.",
+    germanFocus: "Lise Almanca (CO2-Ampel, Stoßlüften & Klimaschutz): Alman okullarında enerji tasarrufu ve iklim koruma için uygulanan resmi 'CO2-Ampel' (Karbondioksit Trafik Işığı) ve 'Stoßlüften statt Kipplüften' (Pencereyi yarım bırakıp ısı kaybetmek yerine 3 dk şok havalandırma) kültürünün 3 dilli entegrasyonu.",
+    hardware: ["Arduino Uno", "MQ-135 Hava Kalitesi/Gaz Sensörü", "DHT11 Sıcaklık/Nem Sensörü", "0.96\" OLED Ekran", "RGB LED & Buzzer"],
     howItWorks: [
-      "Cihaz sınıfın sıcaklığını, nemini ve havadaki karbondioksit/gaz yoğunluğunu sürekli ölçer.",
-      "Hava temizken Yeşil ışık yanar; ders ilerleyip hava ağırlaşmaya başladığında Sarı ışığa döner.",
-      "Hava kalitesi düştüğünde Kırmızı ışık yanar, hafif bir sesli uyarı verir ve ekranda 'Sınıfı Havalandırın!' yazar."
-    ],
-    teamPlan: [
-      "Fen Bilimleri Öğretmeni: Hücresel solunum, CO2 birikimi ve sıcaklık/nem dengesinin bilimsel temelini anlatır.",
-      "Özel Eğitim Öğretmeni: Duyusal hassasiyeti olan veya kendini ifade etmekte zorlanan öğrenciler için sınıf konforunun önemini açıklar.",
-      "Sınıf Öğretmeni: İlkokul sınıflarında dikkat süresi, sağlıklı yaşam ve hijyen alışkanlıklarını sunar.",
-      "Okul Öncesi Öğretmeni: Renkli ışıklarla (Yeşil/Sarı/Kırmızı) küçük çocuklara temiz hava bilincinin nasıl kazandırıldığını anlatır."
+      "Cihaz sınıfın sıcaklığını, bağıl nemini (DHT11) ve havadaki karbondioksit/gaz yoğunluğunu (MQ-135) sürekli ölçerek 3 dilde (TR/EN/DE) analiz eder.",
+      "Kış Modu (Hava & Enerji Koruma): CO₂ 1200 ppm'i aştığında Kırmızı ışık yanar; pencerenin ders boyu yarım açık bırakılıp kalorifer ısısının israf edilmesini önlemek için '3 Dakika Şok Havalandırma (Stoßlüften)' sayacını başlatır. Hava temizlenip sınıf soğumaya başladığında (<18°C) 'Pencereyi Kapatın - Karbon Ayak İzini Koruyun' uyarısı verir.",
+      "Bahar/Yaz Modu (Balıkesir Sıcak Dalgası): Sıcaklık >27°C ve nem >%60 olduğunda küresel ısınma kaynaklı 'Termal Stres (Heat Stress)' uyarısı vererek MGM Balıkesir dış ortam verileriyle karşılaştırma yapılmasını sağlar."
     ],
     oledStates: [
       {
-        btnLabel: "Ders Başı (Temiz Hava)",
-        yellowBar: "DAKİKA 05 // HAVA TEMİZ",
-        line1: "Sıcaklık: 22°C | Nem: %45",
-        line2: "Hava: İdeal (Yeşil Işık)",
-        meterPercent: 25
+        btnLabel: "1. İdeal Sınıf & Enerji Koruma",
+        yellowBar: "AQI: İYİ // GOOD // GUT (YEŞİL)",
+        line1: "Isı: 21°C | Nem: %45 | CO2: 480ppm",
+        line2: "Pencere Kapalı -> Isı Korunuyor",
+        meterPercent: 22
       },
       {
-        btnLabel: "25. Dakika (Orta Seviye)",
-        yellowBar: "DAKİKA 25 // HAVA ORTA",
-        line1: "Sıcaklık: 24°C | Nem: %56",
-        line2: "CO2 Artıyor (Sarı Işık)",
-        meterPercent: 60
+        btnLabel: "2. CO₂ Arttı -> 3 Dk Şok Havalandır!",
+        yellowBar: "! HAVALANDIR // VENTILATE // LÜFTEN !",
+        line1: "CO2: 1450 ppm (Dikkat Kaybı Riski!)",
+        line2: "3 Dk Şok Havalandırma Başlat (180s)",
+        meterPercent: 90
       },
       {
-        btnLabel: "40. Dakika (Havalandırın!)",
-        yellowBar: "! UYARI: SINIFI HAVALANDIRIN !",
-        line1: "Sıcaklık: 26°C | Nem: %68",
-        line2: "Hava Ağırlaştı (Kırmızı Uyarı)",
-        meterPercent: 92
+        btnLabel: "3. Hava Temizlendi -> Pencereyi Kapat",
+        yellowBar: "ISI KAYBI UYARISI // SAVE ENERGY",
+        line1: "CO2 Düştü (520ppm) | Isı: 18°C↓",
+        line2: "Pencereyi Kapat! (Karbon Tasarrufu)",
+        meterPercent: 35
+      },
+      {
+        btnLabel: "4. Balıkesir Sıcak Dalgası (Termal Stres)",
+        yellowBar: "! TERMAL STRES // HEAT WAVE !",
+        line1: "Isı: 28.5°C | Bağıl Nem: %68",
+        line2: "MGM Balıkesir Sıcak Anomalisi!",
+        meterPercent: 85
       }
     ]
   },
@@ -233,55 +216,49 @@ const PROJECTS = [
     id: "proje-5",
     num: "Proje 05",
     shortCode: "05",
-    title: "Çok Duyulu (Sesli & Işıklı) İletkenlik ve Yalıtkanlık Keşif Cihazı",
+    title: "Elektrolit Çözeltiler ve Katılarda Dijital İletkenlik Keşif Cihazı",
     category: "Güvenlik, Afet ve Deney",
     difficulty: "Çok Kolay",
     costLevel: "Çok Düşük Maliyet",
-    juryImpact: "Sunumda tuzlu su, limon suyu ve kalem ucuyla canlı deney yapılır",
-    problem: "Klasik ampul devresinde tuzlu su, limon suyu veya kurşun kalem ucu (grafit) gibi zayıf iletkenlerin ampulü yakamaması nedeniyle öğrencilerin bu maddeleri 'yalıtkan' sanması yanılgısını; ekran, renkli ışık ve sesle çözen güvenli deney aleti.",
-    scienceFocus: "6. Sınıf Elektriğin İletimi ve Direnç (FB.6.6.1 & FB.6.6.3): Katı ve sıvı maddelerin elektriği iletme oranlarını (%0–%100) ölçme ve iletken boyunun dirence etkisini kontrollü deneyle kanıtlama (FBAB7 Deney Yapma).",
-    specialEdFocus: "Görme Engelli ve Özel Öğrenme Destekli Deney: Krokodil kablolar maddeye dokundurulduğunda iletkenlik derecesine göre farklı ses tonu ve renkli ışık verdiği için görme engelli öğrencilerin fen deneyini bağımsız yapmasını sağlar.",
-    primaryFocus: "3. ve 4. Sınıf Fen Bilimleri (Maddeyi Tanıyalım & Yaşamımızdaki Elektrik): Günlük hayattaki maddelerin özelliklerini karşılaştırma ve ıslak zeminde/suyla elektriğe dokunmama (elektrik güvenliği) bilinci.",
-    preschoolFocus: "Okul Öncesi: Sınıftaki güvenli nesneleri (tahta blok, plastik oyuncak, metal kaşık) test uçlarına dokundurarak 'Hangisinde yeşil ışık yanacak?' tahmin ve keşif oyunu.",
-    hardware: ["Arduino Uno", "2x Krokodil (Timsah Ağzı) Kablo", "1x 10kΩ Direnç", "0.96\" OLED Ekran", "RGB LED & Buzzer"],
+    juryImpact: "Fen ve Kimya müfredatının tam kalbinde; sunumda tuzlu su, limon suyu ve grafitle canlı deney yapılır",
+    problem: "Klasik ampul devresinde tuzlu su, asetik/sitrik asit (limon suyu), çeşme suyu veya kurşun kalem ucu (grafit) gibi zayıf/orta iletkenlerin ampulü yakamaması nedeniyle öğrencilerin bu maddeleri 'yalıtkan' sanması yanılgısını; iletkenlik yüzdesini (%0–%100) dijital ölçerek çözen laboratuvar cihazı.",
+    scienceFocus: "6. Sınıf Elektriğin İletimi ve Direnç (FB.6.6.1 & FB.6.6.3): Katı ve sıvı maddelerin elektriği iletme durumlarını karşılaştırma ve iletkenlik-yalıtkanlık kavram yanılgılarını kontrollü deneyle giderme (FBAB7 Deney Yapma).",
+    chemistryFocus: "Lise Kimya (Kimyasal Türler Arası Etkileşimler, Elektrolit Çözeltiler & Allotroplar): Saf suyun yalıtkanlığına karşın NaCl(suda) ve asit çözeltilerinde serbest iyon hareketiyle gerçekleşen iyonik iletkenlik; karbonun allotropu olan grafitteki pi (π) elektronları ve metallerdeki elektron denizi modeli.",
+    englishFocus: "Lise İngilizce (Laboratory English & CLIL): Deney tüplerindeki ve katı numunelerdeki sınıflandırmanın ('Insulator, Weak/Strong Electrolyte, Metallic Conductor') İngilizce laboratuvar föyü ve OLED ekran arayüzüyle sunulması.",
+    germanFocus: "Lise Almanca (Chemie & Physik im Labor): Almanca malzeme ve kimya terimlerinin ('Elektrische Leitfähigkeit: Nichtleiter, Elektrolytlösung / Salzwasser, Leiter') deney istasyonu etiketlerinde ve ekranda 3 dilli gösterimi.",
+    hardware: ["Arduino Uno", "2x Krokodil (Timsah Ağzı) Prob", "1x 10kΩ Referans Direnç", "0.96\" OLED Ekran", "RGB LED & Buzzer"],
     howItWorks: [
-      "5 Volt ile çalışan tamamen güvenli iki adet timsah ağzı (krokodil) kablo test edilecek katı veya sıvı maddeye dokundurulur.",
-      "Cihaz maddenin elektriği ne kadar ilettiğini %0 ile %100 arasında ölçerek mini ekranda gösterir.",
-      "İyi iletkenlerde (metal) Yeşil ışık ve ses, orta iletkenlerde (tuzlu su, kalem ucu) Mavi ışık, yalıtkanlarda (plastik, tahta) Kırmızı ışık yanar."
-    ],
-    teamPlan: [
-      "Fen Bilimleri Öğretmeni: Tuzlu su ve grafitin neden zayıf iletken olduğunu ve kavram yanılgısının nasıl çözüldüğünü anlatır.",
-      "Özel Eğitim Öğretmeni: Sesli ve ışıklı geri bildirimin özel gereksinimli öğrencilere laboratuvar deneylerinde nasıl bağımsızlık kazandırdığını açıklar.",
-      "Sınıf Öğretmeni: İlkokulda maddeyi tanıma ve günlük yaşamda elektrik güvenliği (ıslak elle prizlere dokunmama) eğitimini sunar.",
-      "Okul Öncesi Öğretmeni: Farklı nesnelerle yapılan 'Tahmin Et – Dene – Gözlemle' oyunlaştırma sürecini gösterir."
+      "5 Volt ile çalışan tamamen güvenli iki adet timsah ağzı (krokodil) prob, test edilecek sıvı çözeltiye veya katı maddeye dokundurulur.",
+      "Cihaz maddenin elektriksel iletkenlik oranını %0 ile %100 arasında hesaplayarak OLED ekranda 3 dilde sınıflandırır.",
+      "Güçlü iletkenlerde (metaller) Yeşil ışık, elektrolit çözeltilerde ve grafitte (tuzlu su, limon suyu, kalem ucu) Mavi ışık, yalıtkanlarda (saf su, şekerli su, plastik) Kırmızı ışık yanar."
     ],
     oledStates: [
       {
-        btnLabel: "Plastik / Tahta (Yalıtkan)",
-        yellowBar: "TEST: PLASTİK / TAHTA",
-        line1: "Sonuç: YALITKAN MADDE",
-        line2: "İletkenlik Oranı: %0 (Kırmızı)",
+        btnLabel: "Saf Su / Plastik (Yalıtkan)",
+        yellowBar: "YALITKAN // INSULATOR",
+        line1: "DE: Nichtleiter (Serbest İyon Yok)",
+        line2: "İletkenlik: %0 (Kırmızı LED)",
         meterPercent: 2
       },
       {
-        btnLabel: "Kurşun Kalem Çizgisi (Orta)",
-        yellowBar: "TEST: GRAFİT KALEM UCU",
-        line1: "Sonuç: ZAYIF / ORTA İLETKEN",
-        line2: "İletkenlik Oranı: %38 (Mavi)",
+        btnLabel: "Kurşun Kalem Ucu (Grafit)",
+        yellowBar: "YARI/ORTA İLETKEN // GRAPHITE",
+        line1: "Karbon Allotropu (Pi Elektronları)",
+        line2: "İletkenlik: %38 (Mavi LED)",
         meterPercent: 38
       },
       {
-        btnLabel: "Tuzlu Su (Orta İletken)",
-        yellowBar: "TEST: TUZLU SU ÇÖZELTİSİ",
-        line1: "Sonuç: ORTA İLETKEN (SIVI)",
-        line2: "İletkenlik Oranı: %55 (Mavi)",
-        meterPercent: 55
+        btnLabel: "Tuzlu Su Çözeltisi (Elektrolit)",
+        yellowBar: "ELEKTROLİT // ELECTROLYTE",
+        line1: "Na+(suda) ve Cl-(suda) İyonları",
+        line2: "İletkenlik: %58 (Mavi LED)",
+        meterPercent: 58
       },
       {
-        btnLabel: "Metal Anahtar (İyi İletken)",
-        yellowBar: "TEST: METAL (BAKIR / DEMİR)",
-        line1: "Sonuç: İYİ İLETKEN MADDE",
-        line2: "İletkenlik Oranı: %96 (Yeşil)",
+        btnLabel: "Bakır / Demir (Metalik İletken)",
+        yellowBar: "İYİ İLETKEN // CONDUCTOR",
+        line1: "DE: Elektrischer Leiter (Metal)",
+        line2: "İletkenlik: %96 (Yeşil LED)",
         meterPercent: 96
       }
     ]
@@ -290,48 +267,42 @@ const PROJECTS = [
     id: "proje-6",
     num: "Proje 06",
     shortCode: "06",
-    title: "Günebakan: Doğadan İlham Alan Akıllı Güneş Takip Sistemi",
+    title: "Günebakan: Doğadan İlham Alan Akıllı Güneş Takip ve Temiz Enerji Sistemi",
     category: "Çevre, Sağlık ve Enerji",
     difficulty: "Orta",
     costLevel: "Düşük Maliyet",
-    juryImpact: "Telefon flaşını tutunca panel canlı olarak ışığa döner; etkisi çok yüksek",
-    problem: "Sabit duran güneş panellerinin sabah ve akşam saatlerinde güneş ışığını eğik alması yüzünden yaşanan enerji kaybını, ayçiçeklerinin güneşi takip etme hareketini (biyomimikri) taklit ederek çözen etkileşimli sistem.",
-    scienceFocus: "7. ve 8. Sınıf Enerji Dönüşümleri & Mevsimler (FB.8.1.1 & FB.8.6.3): Güneş ışınlarının geliş açısının birim yüzeye düşen enerjiye etkisi, biyomimikri ve yenilenebilir enerji verimliliği.",
-    specialEdFocus: "Somut Neden-Sonuç ve Görsel-Motor Takip: Öğrenci elindeki feneri hareket ettirdiğinde maket çiçeğin/panelin anında ışığa doğru dönmesi, dikkat eksikliği veya özel öğrenme gereksinimi olan öğrencilerde odaklanmayı ve neden-sonuç bağını güçlendirir.",
-    primaryFocus: "İlkokul Hayat Bilgisi & Fen: Güneş'in gün içindeki konumu (Doğu-Batı yönleri), doğadaki canlıları gözlemleyerek teknoloji üretme ve temiz enerji kaynaklarını tanıma.",
-    preschoolFocus: "Okul Öncesi: Ayçiçeği (Günebakan) bitkisinin güneşi nasıl takip ettiğini hikayeleştirme; el feneriyle maket çiçeği sağa-sola döndürerek duyusal ve eğlenceli keşif yapma.",
-    hardware: ["Arduino Uno", "2x LDR Işık Sensörü", "2x 10kΩ Direnç", "1x SG90 Küçük Servo Motor", "0.96\" OLED Ekran"],
+    juryImpact: "Telefon flaşını tutunca panel canlı olarak ışığa döner; enerji ve yeşil kimya vurgusu çok güçlü",
+    problem: "Sabit duran güneş panellerinin sabah ve akşam saatlerinde güneş ışığını eğik alması yüzünden yaşanan enerji kaybını, ayçiçeklerinin güneşi takip etme hareketini (biyomimikri) taklit ederek çözen ve fosil yakıtlara temiz alternatif sunan sistem.",
+    scienceFocus: "7. ve 8. Sınıf Enerji Dönüşümleri & Mevsimler (FB.8.1.1 & FB.8.6.3): Güneş ışınlarının geliş açısının birim yüzeye düşen ışık enerjisine etkisi, biyomimikri ve yenilenebilir enerji verimliliği.",
+    chemistryFocus: "Lise Kimya (Sürdürülebilirlik, Fotovoltaik Yarı İletkenler & Yeşil Enerji - KİM.9/12): Güneş panellerindeki silisyum (Si) yarı iletken kristallerinde fotonlarla elektron koparılması (fotoelektrik etki) ve fosil yakıt yanma tepkimelerinin (CO₂ salımı) temiz enerjiyle azaltılması.",
+    englishFocus: "Lise İngilizce (Biomimicry & Renewable Energy): 'Biomimicry, Solar Tracking, Photovoltaic Efficiency' kavramlarının uluslararası Sürdürülebilir Kalkınma Amaçları (SDG 7: Affordable and Clean Energy) bağlamında sunulması.",
+    germanFocus: "Lise Almanca (Energiewende & Solarenergie): Almanya'nın dünyaca ünlü yeşil enerji dönüşümü ('Energiewende, Erneuerbare Energien, Sonnenblume-Prinzip') terminolojisinin proje sunumuna ve ekranına entegrasyonu.",
+    hardware: ["Arduino Uno", "2x LDR Fotodirenç Işık Sensörü", "2x 10kΩ Direnç", "1x SG90 Küçük Servo Motor", "0.96\" OLED Ekran"],
     howItWorks: [
-      "Maket güneş panelinin (veya ayçiçeği maketinin) sağ ve sol yanına birer ışık algılayıcı sensör yerleştirilir.",
-      "Telefon flaşı veya güneş ışığı hangi taraftan daha güçlü geliyorsa küçük motor paneli o yöne doğru döndürerek ışığı dik alır.",
-      "Mini ekranda panelin anlık yönü (Doğu / Öğle / Batı) ve kazanılan enerji verimi canlı olarak gösterilir."
-    ],
-    teamPlan: [
-      "Fen Bilimleri Öğretmeni: Güneş ışınlarının geliş açısını (FB.8.1.1) ve yenilenebilir enerji verimliliğini anlatır.",
-      "Özel Eğitim Öğretmeni: Işıkla etkileşimli hareket eden somut materyalin özel gereksinimli öğrencilerde görsel takip ve neden-sonuç algısına katkısını açıklar.",
-      "Sınıf Öğretmeni: Ana yönler (Doğu-Batı), Güneş'in görünür hareketi ve çevre dostu enerji konularını sunar.",
-      "Okul Öncesi Öğretmeni: Ayçiçeği (Günebakan) maketini ve el feneriyle yapılan interaktif oyunu gösterir."
+      "Maket güneş panelinin sağ ve sol yanına birer LDR ışık sensörü (kadmium sülfür yarı iletken fotodirenç) yerleştirilir.",
+      "Telefon flaşı veya güneş ışığı hangi taraftan daha güçlü geliyorsa küçük motor paneli o yöne doğru döndürerek ışığı dik (90°) alır.",
+      "Mini ekranda panelin anlık açısı, yönü ve artan enerji verimi 3 dilde canlı olarak gösterilir."
     ],
     oledStates: [
       {
         btnLabel: "Sabah (Doğu Işığı)",
-        yellowBar: "YÖN: DOĞU // SABAH GÜNEŞİ",
+        yellowBar: "DOĞU // EAST // OSTEN",
         line1: "Panel Açısı: 45° (Doğuya Döndü)",
-        line2: "Enerji Verimi: %94 (+%32 Artış)",
-        meterPercent: 40
+        line2: "Verim (Efficiency): %94 (+%32)",
+        meterPercent: 45
       },
       {
         btnLabel: "Öğle (Tam Dik 90°)",
-        yellowBar: "YÖN: MERKEZ // ÖĞLE VAKTİ",
-        line1: "Panel Açısı: 90° (Tam Dik)",
-        line2: "Enerji Verimi: %99 (Maksimum)",
+        yellowBar: "MERKEZ // SOLAR NOON // MITTAG",
+        line1: "Panel Açısı: 90° (Tam Dik Açı)",
+        line2: "Fotovoltaik Verim: %99 (Maks)",
         meterPercent: 98
       },
       {
         btnLabel: "İkindi (Batı Işığı)",
-        yellowBar: "YÖN: BATI // İKİNDİ GÜNEŞİ",
+        yellowBar: "BATI // WEST // WESTEN",
         line1: "Panel Açısı: 135° (Batıya Döndü)",
-        line2: "Enerji Verimi: %92 (+%34 Artış)",
+        line2: "Verim (Wirkungsgrad): %92",
         meterPercent: 75
       }
     ]
@@ -340,48 +311,42 @@ const PROJECTS = [
     id: "proje-7",
     num: "Proje 07",
     shortCode: "07",
-    title: "Su Tasarruflu Akıllı Okul Bahçesi Sulama Sistemi",
+    title: "Su Ayak İzini Azaltan Çift Sensörlü Akıllı Sulama Sistemi",
     category: "Çevre, Sağlık ve Enerji",
     difficulty: "Kolay - Orta",
     costLevel: "Düşük Maliyet",
-    juryImpact: "Saksıdaki gerçek bitki ve yağmur damlası testiyle çok doğal bir sunum",
-    problem: "Saat ayarlı klasik bahçe fıskiyelerinin yağmur yağarken veya toprak zaten ıslakken bile çalışarak suyu israf etmesini önleyen; hem toprağın nemini hem de yağmuru kontrol eden akıllı sulama sistemi.",
-    scienceFocus: "5., 7. ve 8. Sınıf Sürdürülebilir Yaşam & Kuraklık (FB.5.7.2, FB.7.7.2, FB.8.7.7): Tatlı su kaynaklarının korunması, su ayak izi ve iklim değişikliğine (kuraklığa) karşı iki sensörlü teknolojik çözüm.",
-    specialEdFocus: "Uygulamalı Yaşam Becerisi & Terapötik Bahçecilik: Özel eğitim öğrencilerinin okulda bitki bakımını üstlenmesini kolaylaştırır; bitkinin suya ihtiyacı olup olmadığını renkli ışık ve sesle netleştirerek bağımsız beceri kazandırır.",
-    primaryFocus: "İlkokul Hayat Bilgisi & Fen: Bitki yetiştirme sorumluluğu, su kaynaklarımızın tasarruflu kullanımı ve doğa koruma bilinci.",
-    preschoolFocus: "Okul Öncesi: Gerçek bir çiçek saksısında kuru ve ıslak toprağa dokunma, yağmur sensörüne damlalıkla su damlatarak 'Yağmur yağınca suyu kapat' bilincini yaşayarak öğrenme.",
+    juryImpact: "Topraktaki iyon iletkenliğini ve yağış suyunu canlı test eden doğa dostu otomasyon",
+    problem: "Zaman ayarlı klasik bahçe fıskiyelerinin yağmur yağarken veya toprak zaten nemliyken bile çalışarak tatlı su kaynaklarını israf etmesini önleyen; hem toprağın nemini hem de yağışı analiz eden akıllı sulama sistemi.",
+    scienceFocus: "5., 7. ve 8. Sınıf Sürdürülebilir Yaşam & Kuraklık (FB.5.7.2, FB.7.7.2, FB.8.7.7): Tatlı su kaynaklarının korunması, su döngüsü ve iklim değişikliğine (kuraklığa) karşı iki sensörlü teknolojik çözüm.",
+    chemistryFocus: "Lise Kimya (Su Kimyası, Toprak Mineralleri ve Su Ayak İzi): Toprak nem ve yağmur sensörlerinin çalışma temeli olan 'suyun içindeki çözünmüş mineral iyonları (Ca²⁺, Mg²⁺, K⁺) sayesinde elektrik akımını iletmesi' prensibi ve tatlı su kaynaklarının korunması.",
+    englishFocus: "Lise İngilizce (Water Footprint & Sustainability): 'Smart Irrigation, Soil Moisture, Water Conservation' terimlerinin küresel iklim krizi (SDG 6 & SDG 13) perspektifiyle ekranda ve sunumda işlenmesi.",
+    germanFocus: "Lise Almanca (Wassersparen & Umweltschutz): Almanca çevre ve sürdürülebilir tarım kavramlarının ('Bodenfeuchte, Regen-Sensor, Wasserfußabdruck reduzieren') 3 dilli proje materyaline dönüştürülmesi.",
     hardware: ["Arduino Uno", "Toprak Nem Sensörü", "HW-038 Yağmur Sensörü", "0.96\" OLED Ekran", "RGB LED (veya Mini Su Pompası)"],
     howItWorks: [
-      "Toprak nem sensörü çiçek saksısına batırılır, yağmur sensörü ise yaprakların yanına yerleştirilir.",
-      "Sadece toprak kuruduğunda VE aynı anda yağmur yağmıyorsa sistem sulamayı başlatır.",
+      "Toprak nem sensörü bitki saksısına batırılır, yağmur sensörü ise yaprakların yanına yerleştirilir.",
+      "Sadece toprak kuruduğunda (iyonik iletkenlik düştüğünde) VE aynı anda yağmur yağmıyorsa sistem sulamayı başlatır.",
       "Sulama sırasında yağmur sensörüne bir damla su damlatılırsa sistem yağışı algılar ve suyu korumak için sulamayı anında durdurur."
-    ],
-    teamPlan: [
-      "Fen Bilimleri Öğretmeni: Küresel iklim değişikliği, su döngüsü ve Maarif Modeli su okuryazarlığı hedeflerini anlatır.",
-      "Özel Eğitim Öğretmeni: Toprakla ve bitkiyle temasın özel gereksinimli öğrencilerdeki rehabilitasyon etkisini ve görsel uyarı desteğini açıklar.",
-      "Sınıf Öğretmeni: İlkokulda kaynakların tasarruflu kullanımı ve çevre bilinci kazanımlarını sunar.",
-      "Okul Öncesi Öğretmeni: Saksı bitkisi üzerinde canlı yağmur damlası deneyini ve erken çocukluk doğa eğitimini gösterir."
     ],
     oledStates: [
       {
         btnLabel: "Toprak Kuru + Hava Açık",
-        yellowBar: "SULAMA AKTİF (POMPA AÇIK)",
-        line1: "Toprak: Kuru | Yağış: Yok",
-        line2: "Bitki Sulanıyor...",
+        yellowBar: "SULAMA AKTİF // IRRIGATING",
+        line1: "Toprak: Kuru (Dry / Trocken)",
+        line2: "Yağış: Yok -> Pompa AÇIK",
         meterPercent: 85
       },
       {
         btnLabel: "Toprak Kuru + Yağmur Başladı",
-        yellowBar: "YAĞMUR VAR — SU KORUNDU!",
-        line1: "Yağmur Sensörü Islak Algıladı",
-        line2: "Sulama Otomatik Durduruldu",
+        yellowBar: "YAĞMUR VAR // RAIN // REGEN!",
+        line1: "İyonik Su Algılandı (HW-038)",
+        line2: "Sulama Otomatik DURDURULDU",
         meterPercent: 30
       },
       {
-        btnLabel: "Toprak Nemli (Beklemede)",
-        yellowBar: "TOPRAK NEMİ İDEAL (%75)",
-        line1: "Bitkinin Suya İhtiyacı Yok",
-        line2: "Sistem Tasarruf Modunda",
+        btnLabel: "Toprak Nemli (Tasarruf Modu)",
+        yellowBar: "NEM İDEAL (%75) // WATER SAVED",
+        line1: "DE: Boden feucht (Su Korundu)",
+        line2: "Sistem Bekleme Modunda",
         meterPercent: 15
       }
     ]
@@ -394,37 +359,31 @@ const PROJECTS = [
     category: "Güvenlik, Afet ve Deney",
     difficulty: "Kolay",
     costLevel: "Düşük Maliyet",
-    juryImpact: "Masaya vurulduğunda canlı sismograf çizgisi çizer ve gazı otomatik keser",
-    problem: "Deprem anında hem tüm öğrencileri (işitme ve görme engelliler dahil) saniyeler içinde uyaracak hem de deprem sonrası çıkan yangınları önlemek için doğalgaz ve elektrik hattını otomatik kesecek akıllı güvenlik istasyonu.",
-    scienceFocus: "Ortaokul Fen Bilimleri & Afet Bilinci (FB.8.6.2): Sarsıntı (titreşim) dalgalarının algılanması, elektrik enerjisinin ses/ışık uyarısına dönüşümü ve ikincil afetlerin (gaz yangını) önlenmesi.",
-    specialEdFocus: "Engelsiz Afet Uyarı Sistemi: Deprem anında sadece siren sesine güvenmek işitme engelli öğrenciler için yetersizdir. Bu sistem aynı anda parlak Kırmızı flaşör ışık, ekran mesajı ve yüksek ses vererek tüm özel gereksinimli öğrencileri uyarır.",
-    primaryFocus: "İlkokul Hayat Bilgisi (Doğal Afetler ve Güvenli Yaşam): Deprem öncesinde ve sırasında alınacak önlemler, acil durum bilinci ve evde doğalgaz/elektrik güvenliği.",
-    preschoolFocus: "Okul Öncesi: Masaya hafifçe vurulup alarm çaldığında çocuklarla korkutmadan oyunlaştırılmış 'ÇÖK – KAPAN – TUTUN' tatbikatının yapılması.",
+    juryImpact: "Masaya vurulduğunda canlı sismograf çizer, doğalgaz patlama riskini otomatik keser",
+    problem: "Deprem anında hem bina sakinlerini saniyeler içinde sesli ve görsel olarak uyaracak hem de deprem sonrasında boru kırılmaları nedeniyle çıkan yıkıcı doğalgaz (metan) yangınlarını/patlamalarını önlemek için gaz ve elektrik hattını otomatik kesecek güvenlik istasyonu.",
+    scienceFocus: "Ortaokul Fen Bilimleri & Afet Bilinci (FB.8.6.2): Sismik sarsıntı (titreşim) dalgalarının algılanması, sensör verisinin ses/ışık uyarısına dönüşümü ve deprem güvenliği.",
+    chemistryFocus: "Lise Kimya (Yanma Tepkimeleri, Hidrokarbonlar ve Kimyasal Güvenlik): Doğalgazın ana bileşeni olan metan gazının (CH₄ + 2O₂ → CO₂ + 2H₂O + Isı) sızıntı durumunda oluşturduğu patlama riski ve ikincil kimyasal yangınların otomatik valf kontrolüyle önlenmesi.",
+    englishFocus: "Lise İngilizce (Disaster Management & Emergency Protocol): Uluslararası acil durum uyarı mesajlarının ('EARTHQUAKE ALERT: DROP, COVER, HOLD ON! / GAS VALVE SHUT OFF') ekranda ve acil durum eylem planında sunulması.",
+    germanFocus: "Lise Almanca (Katastrophenschutz & Sicherheit): Almanca endüstriyel güvenlik ve afet yönetimi terimlerinin ('Erdbebenwarnung / Gasabschaltung aktiv / Sicherheitssystem') 3 dilli uyarı panelinde gösterilmesi.",
     hardware: ["Arduino Uno", "SW-420 Titreşim/Sarsıntı Sensörü", "0.96\" OLED Ekran", "RGB LED (Gaz Vanası & Flaşör)", "Buzzer"],
     howItWorks: [
-      "Normal durumda ekranda düz bir sismograf çizgisi akar ve doğalgaz hattını temsil eden Yeşil ışık yanar.",
-      "Masaya hafifçe vurularak sarsıntı oluşturulduğunda ekrandaki çizgi dalgalanır, Kırmızı flaşör ışık ve sesli alarm devreye girer.",
-      "Aynı saniyede Yeşil ışık söner ve ekranda 'Doğalgaz & Elektrik Otomatik Kesildi' uyarısı çıkar."
-    ],
-    teamPlan: [
-      "Fen Bilimleri Öğretmeni: Sismik dalgaları ve deprem anında doğalgaz/elektrik kesme otomasyonunun önemini anlatır.",
-      "Özel Eğitim Öğretmeni: Afet anında işitme, görme ve gelişimsel farklılığı olan öğrenciler için çok duyulu (ışıklı + sesli) erken uyarının hayati önemini açıklar.",
-      "Sınıf Öğretmeni: İlkokul Hayat Bilgisi afet bilinci kazanımlarını ve okul güvenlik planını sunar.",
-      "Okul Öncesi Öğretmeni: Erken çocuklukta 'Çök-Kapan-Tutun' davranış eğitimini ve sınıf içi uygulamayı gösterir."
+      "Normal durumda ekranda düz bir sismograf çizgisi akar ve doğalgaz (CH₄) hattının açık olduğunu gösteren Yeşil ışık yanar.",
+      "Masaya hafifçe vurularak sarsıntı oluşturulduğunda ekrandaki sismik çizgi dalgalanır, Kırmızı flaşör ışık ve sesli alarm devreye girer.",
+      "Aynı saniyede Yeşil ışık söner ve ekranda 'Doğalgaz (CH₄) & Elektrik Otomatik Kesildi' uyarısı çıkar."
     ],
     oledStates: [
       {
         btnLabel: "Normal Durum (Sakin)",
-        yellowBar: "SİSMOGRAF // DURUM NORMAL",
-        line1: "Sismik Çizgi: Düz (Sarsıntı Yok)",
-        line2: "Doğalgaz ve Elektrik: AÇIK (Yeşil)",
+        yellowBar: "SİSMOGRAF // NORMAL // OK",
+        line1: "Sismik Dalga: Yok (Düz Çizgi)",
+        line2: "Doğalgaz (CH4) Hattı: AÇIK",
         meterPercent: 10
       },
       {
         btnLabel: "Deprem Anı (Alarm & Gaz Kesildi!)",
-        yellowBar: "! DEPREM UYARISI — ÇÖK KAPAN TUTUN !",
-        line1: "Şiddetli Sarsıntı Algılandı!",
-        line2: "Doğalgaz & Elektrik OTOMATİK KESİLDİ",
+        yellowBar: "! DEPREM // EARTHQUAKE // ERDBEBEN !",
+        line1: "ÇÖK - KAPAN - TUTUN! (DROP/COVER)",
+        line2: "CH4 Gaz & Elektrik: KESİLDİ!",
         meterPercent: 98
       }
     ]
@@ -432,9 +391,16 @@ const PROJECTS = [
 ];
 
 // Favori seçimleri LocalStorage'da ve Canlı Bulut Kanalında (ntfy.sh) tutma
-const LIVE_SYNC_TOPIC = "stem_grup_oylama_2026_ee45c8fe";
+const LIVE_SYNC_TOPIC = "stem_grup_oylama_2026_fen_kimya_dil";
 const LIVE_POLL_URL = `https://ntfy.sh/${LIVE_SYNC_TOPIC}/json?poll=1`;
 const LIVE_POST_URL = `https://ntfy.sh/${LIVE_SYNC_TOPIC}`;
+
+const VALID_BRANCHES = [
+  "Ortaokul Fen Bilimleri",
+  "Lise Kimya",
+  "Lise İngilizce",
+  "Lise Almanca"
+];
 
 // Her öğretmenin tarayıcısına özel benzersiz ID
 let voterId = localStorage.getItem("stem_voter_id");
@@ -443,7 +409,12 @@ if (!voterId) {
   localStorage.setItem("stem_voter_id", voterId);
 }
 
-let voterBranch = localStorage.getItem("stem_voter_branch") || "Fen Bilimleri";
+let voterBranch = localStorage.getItem("stem_voter_branch") || "Ortaokul Fen Bilimleri";
+if (!VALID_BRANCHES.includes(voterBranch)) {
+  voterBranch = "Ortaokul Fen Bilimleri";
+  localStorage.setItem("stem_voter_branch", voterBranch);
+}
+
 let voterName = localStorage.getItem("stem_voter_name") || "";
 let selectedVotes = JSON.parse(localStorage.getItem("stem_selected_votes") || "[]");
 
@@ -650,9 +621,9 @@ function renderProjects() {
       p.title.toLowerCase().includes(q) ||
       p.problem.toLowerCase().includes(q) ||
       p.scienceFocus.toLowerCase().includes(q) ||
-      p.specialEdFocus.toLowerCase().includes(q) ||
-      p.primaryFocus.toLowerCase().includes(q) ||
-      p.preschoolFocus.toLowerCase().includes(q) ||
+      p.chemistryFocus.toLowerCase().includes(q) ||
+      p.englishFocus.toLowerCase().includes(q) ||
+      p.germanFocus.toLowerCase().includes(q) ||
       p.hardware.some(h => h.toLowerCase().includes(q));
 
     return matchesCategory && matchesSearch;
@@ -700,20 +671,20 @@ function renderProjects() {
           <!-- Gruptaki 4 Öğretmen Branşı İçin Net Kazanım Kutuları -->
           <div class="curriculum-stack">
             <div class="curr-item curr-science">
-              <span class="curr-label">Fen Bilimleri Öğretmeni (Maarif Modeli & FBAB)</span>
+              <span class="curr-label">Ortaokul Fen Bilimleri Öğretmeni (Maarif Modeli &amp; FBAB)</span>
               ${p.scienceFocus}
             </div>
             <div class="curr-item curr-special">
-              <span class="curr-label">Özel Eğitim Öğretmeni (Kapsayıcılık & Çok Duyulu Tasarım)</span>
-              ${p.specialEdFocus}
+              <span class="curr-label">Lise Kimya Öğretmeni (Madde, Çözeltiler, Gazlar &amp; Yeşil Kimya)</span>
+              ${p.chemistryFocus}
             </div>
             <div class="curr-item curr-primary">
-              <span class="curr-label">Sınıf Öğretmeni (İlkokul Hayat Bilgisi & Fen)</span>
-              ${p.primaryFocus}
+              <span class="curr-label">Lise İngilizce Öğretmeni (CLIL, English for STEM &amp; Küresel Sunum)</span>
+              ${p.englishFocus}
             </div>
             <div class="curr-item curr-preschool">
-              <span class="curr-label">Okul Öncesi Öğretmeni (Somut Maket & Oyunlaştırma)</span>
-              ${p.preschoolFocus}
+              <span class="curr-label">Lise Almanca Öğretmeni (MINT, Umwelt &amp; 3 Dilli Teknik Arayüz)</span>
+              ${p.germanFocus}
             </div>
           </div>
 
@@ -749,8 +720,8 @@ function renderComparisonTable() {
         <td><strong>${p.shortCode}</strong></td>
         <td><strong>${p.title}</strong></td>
         <td>${p.scienceFocus.split(":")[0]}</td>
-        <td>${p.specialEdFocus.split(":")[0]}</td>
-        <td>${p.primaryFocus.split(":")[0]} &amp; Erken Çocukluk Maketi</td>
+        <td>${p.chemistryFocus.split(":")[0]}</td>
+        <td>3 Dilli (TR/EN/DE) Ekran &amp; CLIL / MINT Terminolojisi</td>
         <td>${p.difficulty}</td>
         <td>${p.juryImpact}</td>
         <td onclick="event.stopPropagation();">
@@ -810,8 +781,8 @@ function openProjectModal(projectId) {
       </div>
 
       <div class="oled-buttons-wrap">
-        <h4>Ekranda Ne Görünecek? (Canlı Önizleme)</h4>
-        <p>Projeyi çalıştırdığımızda küçük bilgi ekranında öğrencilerin göreceği mesajları aşağıdaki durumlara tıklayarak deneyebilirsiniz:</p>
+        <h4>Ekranda Ne Görünecek? (3 Dilli Canlı Önizleme)</h4>
+        <p>Projeyi çalıştırdığımızda küçük bilgi ekranında Türkçe, İngilizce ve Almanca olarak görünecek mesajları aşağıdaki durumlara tıklayarak deneyebilirsiniz:</p>
         <div class="oled-state-list">
           ${p.oledStates.map((st, idx) => `
             <button type="button" class="oled-state-btn ${idx === 0 ? "active" : ""}" onclick="switchOledState('${p.id}', ${idx}, this)">
